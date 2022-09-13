@@ -1,0 +1,23 @@
+<!-- Keypup.enter remonte le resultat de la recherche uniquement lorsque l'utilisateur presse la touche entrée
+et pas pendant que l'utilisateur écrit -->
+<!-- <input #input (keyup.enter)="selectPokemon(input.value)" type="number">
+<p *ngIf="pokemonSelected">Vous avez sélectionné le pokémon: {{ pokemonSelected?.name }}</p>
+<p *ngIf="!pokemonSelected">Aucun pokémon n'a été trouvé.</p> -->
+<div class='container'>
+    <div class="row">
+    <div *ngFor='let pokemon of pokemonList' class="col s6 m4">
+      <div (click)="goToPokemon(pokemon)" class="card horizontal" pkmnBorderCard>
+        <div class="card-image">
+          <img [src]="pokemon.picture">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ pokemon.name }}</p>
+            <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
+            <span *ngFor='let type of pokemon.types' class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
