@@ -5,6 +5,8 @@ et pas pendant que l'utilisateur écrit -->
 <p *ngIf="!pokemonSelected">Aucun pokémon n'a été trouvé.</p> -->
 <div class='container'>
     <div class="row">
+      <app-search-pokemon></app-search-pokemon>
+      
     <div *ngFor='let pokemon of pokemonList' class="col s6 m4">
       <div (click)="goToPokemon(pokemon)" class="card horizontal" pkmnBorderCard>
         <div class="card-image">
@@ -21,3 +23,5 @@ et pas pendant que l'utilisateur écrit -->
     </div>
     </div>
   </div>
+
+  <a class="btn-floating btn-large waves-effect waves-light red z-depth-3" style="position: fixed; bottom: 25px; right: 25px" routerLink="/pokemon/add">➕</a>
